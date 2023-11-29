@@ -8,13 +8,7 @@ public class Main {
         task5();
         task6();
         task7();
-        dtask1();
-        dtask2();
-        dtask3();
-        dtask4();
-        dtask5();
-        dtask6();
-        dtask61();
+        task8();
 
     }
 
@@ -146,121 +140,19 @@ public class Main {
                         "подготовить отчет.");
             }
         }
-        System.out.println(" \n \n \n \n");
+        System.out.println("");
     }
 
-    // доп. задания
-    private static void dtask1() {
-        System.out.println("доп.задание №1");
-        int number = 1000;
-        int divider = 4;
-        int quantity = 5;
-        while (quantity > 0) {
-            if (number % divider == 0) {
-                System.out.print(number + " ");
-                quantity--;
-            }
-            number++;
-        }
-        System.out.println("\n");
-    }
-
-    private static void dtask2() {
-        System.out.println("доп.задание №2");
-        int i = 1;
-        while (i < 10) {
-            System.out.print(i + " ");
-            i += 2;
-        }
-        System.out.println("\n");
-    }
-
-    private static void dtask3() {
-        System.out.println("доп.задание №3");
-        int i = 90;
-        while (i >= 0) {
-            System.out.print(i + " ");
-            i -= 5;
-        }
-        System.out.println("\n");
-    }
-
-    private static void dtask4() {
-        System.out.println("доп.задание №4");
-        int num = 2;
-        for (int i = 1; i <= 10; i++) {
-            System.out.print(num + " ");
-            num *= 2;
-        }
-        System.out.println("\n");
-    }
-
-    private static void dtask5() {
-        System.out.println("доп.задание №5\nвыходные дни: ");
-        int day = 0;
-        while (day < 31) {
-            day++;
-            if ((day - 1) % 7 == 0) {
-                System.out.print(day + " " + (day + 1) + " ");
+    private static void task8() {
+        System.out.println("задание №8");
+        int year = 0;
+        while (year <= 5555 ) {
+            year++;
+            if (year % 79 == 0) {
+                if (year > 1823 && year < 2123) {
+                    System.out.println(year);
+                }
             }
         }
-        System.out.println("\n");
-    }
-
-    // это решение которое было на сайте
-    private static void dtask6() {
-        System.out.println("доп.задание №6. Вар1");
-        int result = 0;
-        int first = 1;
-        int last = 999_999;
-        for (int current = first; current <= last; current++) {
-            int firstPart = current / 1000;
-            int lastPart = current % 1000;
-            if (firstPart == 0 || lastPart == 0) {
-                continue;
-            }
-            int firstSum = calculateSumOfDigits(firstPart);
-            int lastSum = calculateSumOfDigits(lastPart);
-            if (firstSum == lastSum) {
-                result++;
-            }
-        }
-        System.out.println(result);
-    }
-
-    //этот блок для работы калькулятора, который выполняет сумму цыфр
-    private static int calculateSumOfDigits(int num) {
-        int result = 0;
-
-        while (num > 0) {
-            result += num % 10;
-            num /= 10;
-        }
-
-        return result;
-    }
-
-    // скорее всего я бы его не решил, но принцип я понял, и поменял лишь только с for на while.
-// теперь буду знать что есть функция сложение цыфр числа. я еще не сильно продвинулся по
-// изучению языка посмотре ролики про массивы
-    private static void dtask61() {
-        System.out.println("доп.задание №6. Вар2");
-        int result = 0;
-        int first = 0;
-        int current = first;
-        while (current < 999_999) {
-            current++;
-            int firstPart = current / 1000;
-            int lastPart = current % 1000;
-            if (firstPart == 0 || lastPart == 0) {
-                continue;
-            }
-            int firstSum = calculateSumOfDigits(firstPart);
-            int lastSum = calculateSumOfDigits(lastPart);
-            if (firstSum == lastSum) {
-                result++;
-            }
-        }
-        System.out.println(result);
     }
 }
